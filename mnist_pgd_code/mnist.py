@@ -84,7 +84,7 @@ if __name__=="__main__":
     
     start = time.time()
     
-    for images, labels in data_loader:
+    for images, labels in dataloader:
         labels = labels.to(device)
         images = images.to(device)
         adv_images = images
@@ -112,7 +112,7 @@ if __name__=="__main__":
     print('Total elapsed time (sec) : %.2f' % (time.time() - start))
     print('Robust accuracy: %.2f %%' % (100 * float(correct) / total))
     
-    acc = 100. * float(correct) / len(data_loader.dataset),100. * float(avg_act) / len(data_loader.dataset)
+    acc = 100. * float(correct) / len(dataloader.dataset),100. * float(avg_act) / len(dataloader.dataset)
     
     print('Final Accuracy: ', acc)
 
